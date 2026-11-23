@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zayneb Ben Aissa | Portfolio étudiant</title>
+<meta name="description" content="Portfolio de Zayneb Ben Aissa, étudiante en première année Sciences de Gestion à l'ISET Radès.">
+<meta name="theme-color" content="#f8d7e3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rose:#fbe3ec; --rose-2:#f5bfd3; --rose-3:#e996b6;
+  --beige:#f8f1e8; --beige-2:#efe3d3;
+  --violet:#cdbdf0; --violet-2:#a58bdc; --violet-d:#6f55a8;
+  --blanc:#ffffff; --texte:#4a3b52; --texte-2:#8a7a92;
+  --ombre:0 10px 30px rgba(165,139,220,.18);
+  --ombre-2:0 16px 40px rgba(233,150,182,.28);
+  --r:22px;
+  --titre:'Playfair Display',Georgia,serif;
+  --corps:'Poppins',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:var(--corps);color:var(--texte);background:var(--beige);line-height:1.65;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none}
+.container{width:min(1120px,92%);margin-inline:auto}
+section{padding:84px 0;position:relative}
+.alt{background:linear-gradient(180deg,var(--blanc),var(--rose) 160%)}
+h1,h2,h3{font-family:var(--titre);line-height:1.2}
+.titre-section{text-align:center;margin-bottom:46px}
+.titre-section .etiquette{display:inline-block;background:var(--violet);color:var(--violet-d);font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:6px 16px;border-radius:99px;margin-bottom:12px}
+.titre-section h2{font-size:clamp(1.8rem,4.5vw,2.6rem);color:var(--violet-d)}
+.titre-section p{color:var(--texte-2);max-width:560px;margin:10px auto 0}
+.titre-section .trait{width:70px;height:4px;border-radius:4px;margin:16px auto 0;background:linear-gradient(90deg,var(--rose-3),var(--violet-2))}
+
+/* Boutons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;border-radius:99px;font-weight:500;font-size:.95rem;transition:transform .25s,box-shadow .25s,background .25s}
+.btn:hover{transform:translateY(-3px)}
+.btn-primaire{background:linear-gradient(135deg,var(--rose-3),var(--violet-2));color:#fff;box-shadow:var(--ombre-2)}
+.btn-secondaire{background:var(--blanc);color:var(--violet-d);box-shadow:var(--ombre)}
+.btn-petit{padding:8px 16px;font-size:.82rem}
+.btn-danger{background:#fde8ea;color:#c0394f}
+.btn-doux{background:var(--violet);color:var(--violet-d)}
+
+/* Navigation */
+header{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 2px 20px rgba(165,139,220,.12)}
+nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--titre);font-size:1.35rem;font-weight:700;color:var(--violet-d)}
+.logo span{color:var(--rose-3)}
+.menu{display:flex;gap:6px;list-style:none}
+.menu a{padding:8px 14px;border-radius:99px;font-size:.9rem;color:var(--texte);transition:.25s}
+.menu a:hover{background:var(--rose)}
+.menu a.actif{background:linear-gradient(135deg,var(--rose-2),var(--violet));color:var(--violet-d);font-weight:500}
+.burger{display:none;background:var(--rose);width:44px;height:44px;border-radius:14px;font-size:1.3rem;color:var(--violet-d)}
+
+/* Accueil */
+#accueil{min-height:100vh;display:flex;align-items:center;padding-top:110px;background:linear-gradient(135deg,var(--rose) 0%,var(--beige) 55%,#eee6fb 100%);overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(50px);opacity:.55;animation:flotte 9s ease-in-out infinite;z-index:0}
+.b1{width:320px;height:320px;background:var(--rose-2);top:6%;left:-90px}
+.b2{width:280px;height:280px;background:var(--violet);bottom:4%;right:-60px;animation-delay:-3s}
+.b3{width:180px;height:180px;background:var(--beige-2);top:55%;left:42%;animation-delay:-5s}
+@keyframes flotte{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-28px) scale(1.06)}}
+.hero{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.salut{display:inline-block;background:var(--blanc);padding:8px 18px;border-radius:99px;font-size:.9rem;color:var(--violet-d);box-shadow:var(--ombre);margin-bottom:18px}
+.hero h1{font-size:clamp(2.3rem,7vw,4rem);color:var(--texte)}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--rose-3),var(--violet-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.formation{margin-top:14px;font-weight:500;color:var(--violet-d);font-size:1.05rem}
+.formation small{display:block;font-weight:300;color:var(--texte-2);font-size:.95rem}
+.accroche{margin:18px 0 28px;color:var(--texte-2);max-width:520px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px}
+.photo-cadre{position:relative;width:min(320px,70vw);aspect-ratio:1;margin-inline:auto}
+.photo-cadre::before{content:"";position:absolute;inset:-14px;border-radius:50%;background:conic-gradient(var(--rose-3),var(--violet-2),var(--rose-2),var(--rose-3));animation:tourne 14s linear infinite;opacity:.8}
+.photo{position:relative;width:100%;height:100%;border-radius:50%;overflow:hidden;background:linear-gradient(135deg,var(--rose-2),var(--violet));display:grid;place-items:center;border:8px solid var(--blanc);box-shadow:var(--ombre-2)}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo .mono{font-family:var(--titre);font-size:5rem;color:#fff;letter-spacing:.05em}
+@keyframes tourne{to{transform:rotate(360deg)}}
+
+/* À propos */
+.apropos{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
+.carte{background:var(--blanc);border-radius:var(--r);padding:30px;box-shadow:var(--ombre)}
+.carte h3{color:var(--violet-d);margin-bottom:14px;font-size:1.3rem}
+.carte p{white-space:pre-line}
+.infos-rapides{display:grid;gap:12px;margin-top:20px}
+.info{display:flex;gap:12px;align-items:center;background:var(--rose);padding:12px 16px;border-radius:16px;font-size:.92rem}
+.timeline{position:relative;padding-left:26px;display:grid;gap:20px}
+.timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:3px;border-radius:3px;background:linear-gradient(var(--rose-3),var(--violet-2))}
+.etape{position:relative;background:var(--beige);padding:14px 18px;border-radius:16px}
+.etape::before{content:"";position:absolute;left:-26px;top:20px;width:17px;height:17px;border-radius:50%;background:var(--blanc);border:4px solid var(--rose-3)}
+.etape b{display:block;color:var(--violet-d)}
+.etape span{font-size:.9rem;color:var(--texte-2)}
+.etape .outils{margin-top:8px;display:none;gap:6px}
+
+/* Compétences */
+.grille-comp{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+.comp{background:var(--blanc);border-radius:var(--r);padding:28px 24px;text-align:center;box-shadow:var(--ombre);transition:transform .3s,box-shadow .3s;position:relative}
+.comp:hover{transform:translateY(-8px);box-shadow:var(--ombre-2)}
+.comp .ico{width:68px;height:68px;margin:0 auto 14px;border-radius:50%;display:grid;place-items:center;font-size:1.9rem;background:linear-gradient(135deg,var(--rose),var(--violet))}
+.comp h3{font-size:1.15rem;color:var(--violet-d);margin-bottom:8px}
+.comp p{font-size:.9rem;color:var(--texte-2)}
+.comp .outils{display:none;justify-content:center;gap:6px;margin-top:14px}
+
+/* Filtres + cartes */
+.filtres{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:28px}
+.filtre{padding:8px 18px;border-radius:99px;background:var(--blanc);color:var(--texte);font-size:.88rem;box-shadow:var(--ombre);transition:.25s}
+.filtre.actif,.filtre:hover{background:linear-gradient(135deg,var(--rose-3),var(--violet-2));color:#fff}
+.grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:24px}
+.item{background:var(--blanc);border-radius:var(--r);overflow:hidden;box-shadow:var(--ombre);display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
+.item:hover{transform:translateY(-8px);box-shadow:var(--ombre-2)}
+.item .vignette{height:170px;background:linear-gradient(135deg,var(--rose),var(--violet));display:grid;place-items:center;font-size:3rem;cursor:default;overflow:hidden}
+.item .vignette img{width:100%;height:100%;object-fit:cover;cursor:zoom-in;transition:transform .5s}
+.item:hover .vignette img{transform:scale(1.07)}
+.item .corps{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.badges{display:flex;flex-wrap:wrap;gap:6px}
+.badge{font-size:.72rem;font-weight:500;padding:3px 12px;border-radius:99px;background:var(--rose);color:var(--rose-3);filter:saturate(1.4)}
+.badge.v{background:#eee7fb;color:var(--violet-d)}
+.item h3{font-size:1.15rem;color:var(--texte)}
+.item p{font-size:.88rem;color:var(--texte-2);white-space:pre-line}
+.item .boutons{margin-top:auto;padding-top:10px;display:flex;flex-wrap:wrap;gap:8px}
+.item .outils{display:none;gap:8px;flex-wrap:wrap;padding-top:6px;border-top:1px dashed var(--rose-2);margin-top:6px}
+.vide{grid-column:1/-1;text-align:center;background:var(--blanc);border:2px dashed var(--rose-2);border-radius:var(--r);padding:40px 20px;color:var(--texte-2)}
+.vide b{display:block;font-size:1.05rem;color:var(--violet-d);margin-bottom:6px}
+.ajout{text-align:center;margin-top:28px;display:none}
+
+/* Contact */
+.grille-contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.contact-carte{background:var(--blanc);border-radius:var(--r);padding:26px;box-shadow:var(--ombre);text-align:center;transition:.3s}
+.contact-carte:hover{transform:translateY(-6px);box-shadow:var(--ombre-2)}
+.contact-carte .ico{font-size:1.8rem;margin-bottom:8px}
+.contact-carte b{display:block;color:var(--violet-d)}
+.contact-carte span{font-size:.9rem;color:var(--texte-2);word-break:break-word}
+.reseaux{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:30px}
+
+footer{background:var(--violet-d);color:#f4eefc;text-align:center;padding:32px 0;font-size:.9rem}
+footer button{background:transparent;color:#d9cdf2;text-decoration:underline;font-size:.85rem;margin-top:8px}
+
+/* Mode édition */
+body.edit .outils{display:flex!important}
+body.edit .ajout{display:block}
+.barre-edit{position:fixed;left:50%;bottom:14px;transform:translate(-50%,160%);z-index:60;background:var(--blanc);border-radius:22px;box-shadow:0 12px 40px rgba(111,85,168,.35);padding:12px 14px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;width:min(94vw,520px);transition:transform .4s}
+body.edit .barre-edit{transform:translate(-50%,0)}
+.barre-edit small{width:100%;text-align:center;color:var(--texte-2);font-size:.75rem}
+body.edit{padding-bottom:140px}
+
+/* Fenêtre modale */
+#modal{position:fixed;inset:0;z-index:100;background:rgba(74,59,82,.55);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:16px}
+#modal.ouvert{display:flex;animation:fondu .25s}
+.boite{background:var(--blanc);border-radius:26px;width:min(560px,100%);max-height:92vh;overflow:auto;padding:26px;animation:monte .3s}
+.boite h3{color:var(--violet-d);font-size:1.4rem;margin-bottom:16px}
+label{display:block;font-size:.85rem;font-weight:500;margin:12px 0 4px;color:var(--violet-d)}
+input[type=text],input[type=email],input[type=tel],input[type=url],select,textarea{width:100%;padding:11px 14px;border:2px solid var(--rose);border-radius:14px;font:inherit;font-size:.95rem;color:var(--texte);background:var(--beige);outline:none;transition:.2s}
+input:focus,select:focus,textarea:focus{border-color:var(--violet-2);background:#fff}
+textarea{min-height:100px;resize:vertical}
+input[type=file]{font-size:.85rem;width:100%}
+.aide{font-size:.78rem;color:var(--texte-2);margin-top:3px}
+.rangee{display:flex;gap:10px;justify-content:flex-end;margin-top:22px;flex-wrap:wrap}
+.deux{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fichier-actuel{display:flex;align-items:center;justify-content:space-between;gap:8px;background:var(--rose);padding:8px 12px;border-radius:12px;font-size:.82rem;margin-top:6px}
+#lightbox img{max-height:88vh;border-radius:18px;margin:auto}
+@keyframes fondu{from{opacity:0}to{opacity:1}}
+@keyframes monte{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+#toast{position:fixed;top:82px;left:50%;transform:translate(-50%,-30px);background:var(--violet-d);color:#fff;padding:10px 22px;border-radius:99px;z-index:200;font-size:.9rem;opacity:0;pointer-events:none;transition:.35s;max-width:92vw;text-align:center}
+#toast.visible{opacity:1;transform:translate(-50%,0)}
+
+/* Animations d'apparition */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+/* Mobile */
+@media (max-width:860px){
+  .burger{display:block}
+  .menu{position:fixed;top:68px;left:0;right:0;flex-direction:column;background:rgba(255,255,255,.97);padding:14px 4%;gap:4px;box-shadow:0 20px 30px rgba(165,139,220,.2);transform:translateY(-130%);transition:transform .4s;border-radius:0 0 24px 24px}
+  .menu.ouvert{transform:none}
+  .menu a{display:block;padding:12px 16px}
+  .hero{grid-template-columns:1fr;text-align:center}
+  .hero .actions{justify-content:center}
+  .accroche{margin-inline:auto}
+  .hero .col-photo{order:-1}
+  .apropos{grid-template-columns:1fr}
+  section{padding:64px 0}
+  .deux{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="container">
+    <a href="#accueil" class="logo" id="logo">Zayneb<span>.</span></a>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu">☰</button>
+    <ul class="menu" id="menu">
+      <li><a href="#accueil" class="actif">Accueil</a></li>
+      <li><a href="#apropos">À propos</a></li>
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#travaux">Travaux</a></li>
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#certificats">Certificats</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<!-- ACCUEIL -->
+<section id="accueil">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="container hero">
+    <div class="col-texte reveal">
+      <span class="salut">🌸 Bienvenue sur mon portfolio</span>
+      <h1 id="h-nom"></h1>
+      <p class="formation" id="h-formation"></p>
+      <p class="accroche" id="h-accroche"></p>
+      <div class="actions">
+        <a href="#travaux" class="btn btn-primaire">Voir mes travaux ✨</a>
+        <a href="#contact" class="btn btn-secondaire">Me contacter</a>
+      </div>
+    </div>
+    <div class="col-photo reveal">
+      <div class="photo-cadre"><div class="photo" id="h-photo"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- A PROPOS -->
+<section id="apropos" class="alt">
+  <div class="container">
+    <div class="titre-section reveal"><span class="etiquette">À propos</span><h2>Qui suis-je ?</h2><div class="trait"></div></div>
+    <div class="apropos">
+      <div class="carte reveal">
+        <h3>Présentation</h3>
+        <p id="a-texte"></p>
+        <div class="infos-rapides" id="a-infos"></div>
+        <div class="outils" style="margin-top:16px;display:none"><button class="btn btn-doux btn-petit" data-act="profil">✎ Modifier mon profil</button></div>
+      </div>
+      <div class="carte reveal">
+        <h3>Parcours universitaire</h3>
+        <div class="timeline" id="a-parcours"></div>
+        <div class="outils" style="margin-top:16px;display:none"><button class="btn btn-doux btn-petit" data-act="etape-ajout">＋ Ajouter une étape</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETENCES -->
+<section id="competences">
+  <div class="container">
+    <div class="titre-section reveal"><span class="etiquette">Compétences</span><h2>Mes compétences</h2><p>Ce que j'apprends et ce que je développe chaque jour.</p><div class="trait"></div></div>
+    <div class="grille-comp" id="g-comp"></div>
+    <div class="ajout"><button class="btn btn-primaire" data-act="comp-ajout">＋ Ajouter une compétence</button></div>
+  </div>
+</section>
+
+<!-- TRAVAUX -->
+<section id="travaux" class="alt">
+  <div class="container">
+    <div class="titre-section reveal"><span class="etiquette">Travaux</span><h2>Mes travaux universitaires</h2><p>Devoirs, exercices, recherches et documents.</p><div class="trait"></div></div>
+    <div class="filtres" id="f-travaux"></div>
+    <div class="grille" id="g-travaux"></div>
+    <div class="ajout"><button class="btn btn-primaire" data-act="ajout" data-s="travaux">＋ Ajouter un travail</button></div>
+  </div>
+</section>
+
+<!-- PROJETS -->
+<section id="projets">
+  <div class="container">
+    <div class="titre-section reveal"><span class="etiquette">Projets</span><h2>Mes projets</h2><p>Exposés et projets réalisés à l'université.</p><div class="trait"></div></div>
+    <div class="filtres" id="f-projets"></div>
+    <div class="grille" id="g-projets"></div>
+    <div class="ajout"><button class="btn btn-primaire" data-act="ajout" data-s="projets">＋ Ajouter un projet</button></div>
+  </div>
+</section>
+
+<!-- CERTIFICATS -->
+<section id="certificats" class="alt">
+  <div class="container">
+    <div class="titre-section reveal"><span class="etiquette">Certificats</span><h2>Mes certificats</h2><p>Mes formations et attestations.</p><div class="trait"></div></div>
+    <div class="grille" id="g-certificats"></div>
+    <div class="ajout"><button class="btn btn-primaire" data-act="ajout" data-s="certificats">＋ Ajouter un certificat</button></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="titre-section reveal"><span class="etiquette">Contact</span><h2>Me contacter</h2><p>N'hésitez pas à m'écrire.</p><div class="trait"></div></div>
+    <div class="grille-contact reveal" id="c-grille"></div>
+    <div class="reseaux reveal" id="c-reseaux"></div>
+    <div class="outils" style="justify-content:center;margin-top:22px;display:none"><button class="btn btn-doux btn-petit" data-act="profil">✎ Modifier mes coordonnées</button></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© <span id="annee"></span> <span id="f-nom"></span> · Portfolio étudiant · <span id="f-etab"></span></p>
+    <button id="btn-edit">✎ Espace de modification</button>
+  </div>
+</footer>
+
+<!-- Barre du mode édition -->
+<div class="barre-edit" id="barre-edit">
+  <small>Mode modification actif. Tes changements sont enregistrés sur cet appareil.</small>
+  <button class="btn btn-primaire btn-petit" data-act="exporter">📤 Préparer la publication</button>
+  <button class="btn btn-secondaire btn-petit" data-act="importer">📥 Restaurer</button>
+  <button class="btn btn-danger btn-petit" data-act="quitter">Quitter</button>
+  <input type="file" id="in-import" accept=".json,application/json" hidden>
+</div>
+
+<div id="modal"></div>
+<div id="toast"></div>
+
+<script>
+/* ========== DONNÉES PAR DÉFAUT (modifiable depuis le mode modification) ========== */
+const DEFAUT = {
+  profil:{
+    nom:"Zayneb Ben Aissa",
+    formation:"Étudiante en 1ʳᵉ année Sciences de Gestion",
+    etablissement:"ISET Radès, Tunisie",
+    accroche:"Bienvenue ! Vous trouverez ici mes travaux, mes projets et mes certificats.",
+    apropos:"Je m'appelle Zayneb Ben Aissa. Je suis étudiante en première année Sciences de Gestion à l'ISET Radès, en Tunisie.\n\nCe portfolio présente mon parcours, mes compétences, mes travaux universitaires, mes projets et mes certificats.",
+    email:"", tel:"", ville:"",
+    instagram:"", linkedin:"", facebook:"", whatsapp:"",
+    photo:"",
+    monogramme:"ZA"
+  },
+  parcours:[
+    {id:"p1", titre:"1ʳᵉ année Sciences de Gestion", detail:"ISET Radès, Tunisie"}
+  ],
+  competences:[
+    {id:"c1", icone:"💬", nom:"Communication", desc:"Exprimer mes idées clairement, à l'oral comme à l'écrit."},
+    {id:"c2", icone:"🤝", nom:"Travail en équipe", desc:"Collaborer avec les autres pour réussir ensemble."},
+    {id:"c3", icone:"🗂️", nom:"Organisation", desc:"Planifier mon travail et respecter les délais."},
+    {id:"c4", icone:"🎨", nom:"Canva", desc:"Créer des supports visuels et des présentations."},
+    {id:"c5", icone:"💻", nom:"Outils numériques", desc:"Utiliser les outils numériques pour étudier et présenter."}
+  ],
+  travaux:[], projets:[], certificats:[]
+};
+
+/* Configuration des 3 sections avec cartes */
+const CFG = {
+  travaux:{ singulier:"travail", icone:"📚", types:["Devoir","Exercice","Recherche","Document"], sous:"Matière", vide:"Aucun travail pour le moment", videTxt:"Active le mode modification (en bas de page) pour ajouter ton premier travail." },
+  projets:{ singulier:"projet", icone:"🚀", types:["Exposé","Projet de groupe","Projet personnel","Autre"], sous:"Matière ou cadre", vide:"Aucun projet pour le moment", videTxt:"Active le mode modification (en bas de page) pour ajouter ton premier projet." },
+  certificats:{ singulier:"certificat", icone:"🏅", types:["Formation","Atelier","Autre"], sous:"Organisme", vide:"Aucun certificat pour le moment", videTxt:"Active le mode modification (en bas de page) pour ajouter ton premier certificat." }
+};
+
+let data = null;
+const filtres = {travaux:"Tous", projets:"Tous"};
+const $ = (s,r=document)=>r.querySelector(s);
+const esc = s => String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const uid = ()=> "i"+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+const clone = o => JSON.parse(JSON.stringify(o));
+
+/* ========== STOCKAGE (IndexedDB) ========== */
+function ouvrirDB(){return new Promise((ok,ko)=>{const r=indexedDB.open("portfolio-zayneb",1);r.onupgradeneeded=()=>r.result.createObjectStore("kv");r.onsuccess=()=>ok(r.result);r.onerror=()=>ko(r.error);});}
+async function dbGet(k){const d=await ouvrirDB();return new Promise((ok,ko)=>{const q=d.transaction("kv").objectStore("kv").get(k);q.onsuccess=()=>ok(q.result);q.onerror=()=>ko(q.error);});}
+async function dbSet(k,v){const d=await ouvrirDB();return new Promise((ok,ko)=>{const t=d.transaction("kv","readwrite");t.objectStore("kv").put(v,k);t.oncomplete=()=>ok();t.onerror=()=>ko(t.error);});}
+async function sauver(){ try{ await dbSet("data",data); }catch(e){ toast("⚠️ Impossible d'enregistrer sur cet appareil."); } }
+function fusion(base,extra){ const r=clone(base); if(extra&&typeof extra==="object"){ for(const k of Object.keys(extra)){ r[k]= (k==="profil") ? Object.assign(r.profil,extra.profil) : extra[k]; } } return r; }
+
+async function charger(){
+  let local=null;
+  try{ local=await dbGet("data"); }catch(e){}
+  if(local){ data=fusion(DEFAUT,local); return; }
+  try{
+    const rep=await fetch("contenu.json",{cache:"no-store"});
+    if(rep.ok){ data=fusion(DEFAUT,await rep.json()); return; }
+  }catch(e){}
+  data=clone(DEFAUT);
+}
+
+/* ========== OUTILS ========== */
+let tt;
+function toast(msg){const t=$("#toast");t.textContent=msg;t.classList.add("visible");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("visible"),3200);}
+function lireFichier(f){return new Promise((ok,ko)=>{const r=new FileReader();r.onload=()=>ok(r.result);r.onerror=ko;r.readAsDataURL(f);});}
+function lireImage(f,max=1100){return new Promise((ok,ko)=>{const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const s=Math.min(1,max/Math.max(im.width,im.height));const c=document.createElement("canvas");c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);c.getContext("2d").drawImage(im,0,0,c.width,c.height);ok(c.toDataURL("image/jpeg",.82));};im.onerror=ko;im.src=r.result;};r.onerror=ko;r.readAsDataURL(f);});}
+function dataUrlVersBlobUrl(u,mimeDef){const [h,b]=u.split(",");const m=(h.match(/:(.*?);/)||[])[1]||mimeDef||"application/octet-stream";const bin=atob(b);const a=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)a[i]=bin.charCodeAt(i);return URL.createObjectURL(new Blob([a],{type:m.includes("pdf")||!m?"application/pdf":m}));}
+function lien(type,v){ v=(v||"").trim(); if(!v) return ""; if(type==="http") return /^https?:\/\//i.test(v)?v:"https://"+v.replace(/^@/,""); return v; }
+function reseau(base,v){ v=(v||"").trim(); if(!v) return ""; if(/^https?:\/\//i.test(v)) return v; return base+v.replace(/^@/,""); }
+
+/* ========== AFFICHAGE ========== */
+function rendreProfil(){
+  const p=data.profil;
+  $("#h-nom").innerHTML=esc(p.nom).replace(/^(\S+)/,"<em>$1</em>");
+  $("#h-formation").innerHTML=esc(p.formation)+"<small>"+esc(p.etablissement)+"</small>";
+  $("#h-accroche").textContent=p.accroche;
+  const ini=(p.monogramme||"").trim() || (p.nom||"?").split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();
+  $("#h-photo").innerHTML = p.photo ? `<img src="${p.photo}" alt="Photo de ${esc(p.nom)}">` : `<span class="mono">${esc(ini)}</span>`;
+  $("#a-texte").textContent=p.apropos;
+  $("#a-infos").innerHTML = `
+    <div class="info">🎓 <span>${esc(p.formation)}</span></div>
+    <div class="info">🏫 <span>${esc(p.etablissement)}</span></div>
+    ${p.ville?`<div class="info">📍 <span>${esc(p.ville)}</span></div>`:""}`;
+  $("#logo").innerHTML=esc((p.nom||"").split(" ")[0])+"<span>.</span>";
+  $("#f-nom").textContent=p.nom; $("#f-etab").textContent=p.etablissement;
+  document.title=p.nom+" | Portfolio étudiant";
+  // parcours
+  $("#a-parcours").innerHTML = data.parcours.length ? data.parcours.map(e=>`
+    <div class="etape"><b>${esc(e.titre)}</b><span>${esc(e.detail)}</span>
+      <div class="outils"><button class="btn btn-doux btn-petit" data-act="etape-edit" data-id="${e.id}">✎</button><button class="btn btn-danger btn-petit" data-act="etape-sup" data-id="${e.id}">🗑</button></div>
+    </div>`).join("") : `<p style="color:var(--texte-2)">Ajoute les étapes de ton parcours.</p>`;
+  // contact
+  const cartes=[];
+  if(p.email) cartes.push(`<a class="contact-carte" href="mailto:${esc(p.email)}"><div class="ico">✉️</div><b>E-mail</b><span>${esc(p.email)}</span></a>`);
+  if(p.tel) cartes.push(`<a class="contact-carte" href="tel:${esc(p.tel.replace(/\s/g,""))}"><div class="ico">📞</div><b>Téléphone</b><span>${esc(p.tel)}</span></a>`);
+  if(p.ville) cartes.push(`<div class="contact-carte"><div class="ico">📍</div><b>Localisation</b><span>${esc(p.ville)}</span></div>`);
+  cartes.push(`<div class="contact-carte"><div class="ico">🏫</div><b>Établissement</b><span>${esc(p.etablissement)}</span></div>`);
+  if(!p.email && !p.tel) cartes.push(`<div class="contact-carte"><div class="ico">💌</div><b>Coordonnées</b><span>À compléter dans le mode modification.</span></div>`);
+  $("#c-grille").innerHTML=cartes.join("");
+  const r=[];
+  const wa=(p.whatsapp||"").replace(/[^\d]/g,"");
+  if(wa) r.push(`<a class="btn btn-secondaire" target="_blank" rel="noopener" href="https://wa.me/${wa}">💬 WhatsApp</a>`);
+  const ig=reseau("https://instagram.com/",p.instagram); if(ig) r.push(`<a class="btn btn-secondaire" target="_blank" rel="noopener" href="${esc(ig)}">📸 Instagram</a>`);
+  const li=reseau("https://linkedin.com/in/",p.linkedin); if(li) r.push(`<a class="btn btn-secondaire" target="_blank" rel="noopener" href="${esc(li)}">💼 LinkedIn</a>`);
+  const fb=reseau("https://facebook.com/",p.facebook); if(fb) r.push(`<a class="btn btn-secondaire" target="_blank" rel="noopener" href="${esc(fb)}">👍 Facebook</a>`);
+  $("#c-reseaux").innerHTML=r.join("");
+}
+function rendreCompetences(){
+  $("#g-comp").innerHTML=data.competences.map(c=>`
+    <div class="comp reveal"><div class="ico">${esc(c.icone||"⭐")}</div><h3>${esc(c.nom)}</h3><p>${esc(c.desc)}</p>
+      <div class="outils"><button class="btn btn-doux btn-petit" data-act="comp-edit" data-id="${c.id}">✎ Modifier</button><button class="btn btn-danger btn-petit" data-act="comp-sup" data-id="${c.id}">🗑</button></div>
+    </div>`).join("");
+}
+function rendreSection(s){
+  const cfg=CFG[s], liste=data[s];
+  if(s!=="certificats"){
+    const f=$("#f-"+s);
+    f.innerHTML=["Tous",...cfg.types].map(t=>`<button class="filtre ${filtres[s]===t?"actif":""}" data-act="filtre" data-s="${s}" data-t="${esc(t)}">${esc(t)}</button>`).join("");
+    f.style.display = liste.length ? "flex":"none";
+  }
+  const vis = liste.filter(x=> s==="certificats" || filtres[s]==="Tous" || x.type===filtres[s]);
+  const g=$("#g-"+s);
+  if(!vis.length){
+    g.innerHTML=`<div class="vide"><b>${cfg.icone} ${liste.length?"Rien dans cette catégorie":cfg.vide}</b>${liste.length?"Choisis une autre catégorie.":cfg.videTxt}</div>`;
+    return;
+  }
+  g.innerHTML=vis.slice().reverse().map(x=>`
+    <article class="item reveal">
+      <div class="vignette">${x.image?`<img src="${x.image}" alt="${esc(x.titre)}" data-act="zoom" data-s="${s}" data-id="${x.id}">`:cfg.icone}</div>
+      <div class="corps">
+        <div class="badges">${x.type?`<span class="badge">${esc(x.type)}</span>`:""}${x.sous?`<span class="badge v">${esc(x.sous)}</span>`:""}${x.date?`<span class="badge v">📅 ${esc(x.date)}</span>`:""}</div>
+        <h3>${esc(x.titre)}</h3>
+        ${x.desc?`<p>${esc(x.desc)}</p>`:""}
+        <div class="boutons">
+          ${x.pdf?`<button class="btn btn-primaire btn-petit" data-act="pdf" data-s="${s}" data-id="${x.id}">📄 Ouvrir le PDF</button><button class="btn btn-secondaire btn-petit" data-act="dl" data-s="${s}" data-id="${x.id}">⬇ Télécharger</button>`:""}
+          ${x.lien?`<a class="btn btn-secondaire btn-petit" target="_blank" rel="noopener" href="${esc(lien("http",x.lien))}">🔗 Voir le lien</a>`:""}
+        </div>
+        <div class="outils"><button class="btn btn-doux btn-petit" data-act="edit" data-s="${s}" data-id="${x.id}">✎ Modifier</button><button class="btn btn-danger btn-petit" data-act="sup" data-s="${s}" data-id="${x.id}">🗑 Supprimer</button></div>
+      </div>
+    </article>`).join("");
+}
+function tout(){ rendreProfil(); rendreCompetences(); ["travaux","projets","certificats"].forEach(rendreSection); revelations(); }
+
+/* ========== ANIMATIONS ========== */
+const obs = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); obs.unobserve(e.target);} }),{threshold:.12});
+function revelations(){ document.querySelectorAll(".reveal:not(.in)").forEach(el=>obs.observe(el)); }
+
+/* ========== FENÊTRES ========== */
+function ouvrir(html){ const m=$("#modal"); m.innerHTML=html; m.classList.add("ouvert"); document.body.style.overflow="hidden"; }
+function fermer(){ $("#modal").classList.remove("ouvert"); $("#modal").innerHTML=""; document.body.style.overflow=""; }
+$("#modal").addEventListener("click",e=>{ if(e.target.id==="modal") fermer(); });
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") fermer(); });
+
+function formItem(s,id){
+  const cfg=CFG[s]; const ex= id ? data[s].find(x=>x.id===id) : null;
+  const x= ex || {titre:"",type:cfg.types[0],sous:"",date:"",desc:"",lien:"",image:"",pdf:null};
+  ouvrir(`<div class="boite"><h3>${ex?"Modifier":"Ajouter"} un ${cfg.singulier}</h3>
+    <form id="form-item">
+      <label>Titre *</label><input type="text" name="titre" required maxlength="120" value="${esc(x.titre)}">
+      <div class="deux">
+        <div><label>Catégorie</label><select name="type">${cfg.types.map(t=>`<option ${t===x.type?"selected":""}>${esc(t)}</option>`).join("")}</select></div>
+        <div><label>Date</label><input type="text" name="date" placeholder="Ex : Novembre 2026" value="${esc(x.date)}"></div>
+      </div>
+      <label>${cfg.sous}</label><input type="text" name="sous" maxlength="80" value="${esc(x.sous)}">
+      <label>Description</label><textarea name="desc" maxlength="800">${esc(x.desc)}</textarea>
+      <label>Image (facultatif)</label>
+      ${x.image?`<div class="fichier-actuel"><span>🖼️ Image actuelle</span><label style="margin:0;font-weight:400"><input type="checkbox" name="rm-image"> la retirer</label></div>`:""}
+      <input type="file" name="image" accept="image/*">
+      <label>Fichier PDF (facultatif)</label>
+      ${x.pdf?`<div class="fichier-actuel"><span>📄 ${esc(x.pdf.nom)}</span><label style="margin:0;font-weight:400"><input type="checkbox" name="rm-pdf"> le retirer</label></div>`:""}
+      <input type="file" name="pdf" accept="application/pdf,.pdf">
+      <p class="aide">Conseil : PDF de moins de 5 Mo pour que le site reste rapide.</p>
+      <label>Lien externe (facultatif)</label><input type="text" name="lien" placeholder="Ex : lien Canva, Google Drive…" value="${esc(x.lien)}">
+      <div class="rangee"><button type="button" class="btn btn-secondaire btn-petit" data-act="fermer">Annuler</button><button type="submit" class="btn btn-primaire btn-petit">Enregistrer</button></div>
+    </form></div>`);
+  $("#form-item").addEventListener("submit",async e=>{
+    e.preventDefault(); const f=e.target; const bouton=f.querySelector("[type=submit]"); bouton.disabled=true; bouton.textContent="Patiente…";
+    try{
+      const o= ex || {id:uid()};
+      o.titre=f.titre.value.trim(); o.type=f.type.value; o.date=f.date.value.trim(); o.sous=f.sous.value.trim(); o.desc=f.desc.value.trim(); o.lien=f.lien.value.trim();
+      if(f["rm-image"]?.checked) o.image="";
+      if(f["rm-pdf"]?.checked) o.pdf=null;
+      const im=f.image.files[0]; if(im) o.image=await lireImage(im);
+      const pd=f.pdf.files[0];
+      if(pd){
+        if(pd.size>8*1024*1024){ toast("⚠️ PDF trop lourd (max 8 Mo)."); bouton.disabled=false; bouton.textContent="Enregistrer"; return; }
+        o.pdf={nom:pd.name,data:await lireFichier(pd)};
+      }
+      if(!ex) data[s].push(o);
+      await sauver(); fermer(); rendreSection(s); revelations(); toast("✅ Enregistré !");
+    }catch(err){ toast("⚠️ Une erreur est survenue."); bouton.disabled=false; bouton.textContent="Enregistrer"; }
+  });
+}
+function formProfil(){
+  const p=data.profil;
+  const ch=(n,l,ph="",t="text")=>`<label>${l}</label><input type="${t}" name="${n}" placeholder="${ph}" value="${esc(p[n])}">`;
+  ouvrir(`<div class="boite"><h3>Mon profil et mes coordonnées</h3><form id="form-profil">
+    ${ch("nom","Nom complet")}${ch("monogramme","Initiales affichées (si pas de photo)","Ex : ZA")}${ch("formation","Formation")}${ch("etablissement","Établissement")}
+    <label>Phrase de bienvenue</label><textarea name="accroche" maxlength="200">${esc(p.accroche)}</textarea>
+    <label>Présentation (page À propos)</label><textarea name="apropos" style="min-height:150px">${esc(p.apropos)}</textarea>
+    <label>Photo de profil (facultatif)</label>
+    ${p.photo?`<div class="fichier-actuel"><span>🖼️ Photo actuelle</span><label style="margin:0;font-weight:400"><input type="checkbox" name="rm-photo"> la retirer</label></div>`:""}
+    <input type="file" name="photo" accept="image/*">
+    ${ch("email","E-mail","exemple@mail.com","email")}${ch("tel","Téléphone","","tel")}${ch("ville","Ville / Pays")}
+    ${ch("whatsapp","WhatsApp (numéro avec indicatif)","Ex : 21612345678")}
+    ${ch("instagram","Instagram (nom d'utilisateur ou lien)")}${ch("linkedin","LinkedIn (nom d'utilisateur ou lien)")}${ch("facebook","Facebook (nom ou lien)")}
+    <p class="aide">Laisse vide ce que tu ne veux pas afficher.</p>
+    <div class="rangee"><button type="button" class="btn btn-secondaire btn-petit" data-act="fermer">Annuler</button><button type="submit" class="btn btn-primaire btn-petit">Enregistrer</button></div>
+  </form></div>`);
+  $("#form-profil").addEventListener("submit",async e=>{
+    e.preventDefault(); const f=e.target;
+    ["nom","monogramme","formation","etablissement","accroche","apropos","email","tel","ville","whatsapp","instagram","linkedin","facebook"].forEach(k=>p[k]=f[k].value.trim());
+    if(f["rm-photo"]?.checked) p.photo="";
+    const im=f.photo.files[0]; if(im) p.photo=await lireImage(im,700);
+    await sauver(); fermer(); rendreProfil(); toast("✅ Profil enregistré !");
+  });
+}
+function formSimple(titre,champs,valeurs,onOk){
+  ouvrir(`<div class="boite"><h3>${titre}</h3><form id="form-s">${champs.map(c=>`<label>${c.l}</label>${c.area?`<textarea name="${c.n}">${esc(valeurs[c.n])}</textarea>`:`<input type="text" name="${c.n}" value="${esc(valeurs[c.n])}" ${c.req?"required":""}>`}`).join("")}
+    <div class="rangee"><button type="button" class="btn btn-secondaire btn-petit" data-act="fermer">Annuler</button><button type="submit" class="btn btn-primaire btn-petit">Enregistrer</button></div></form></div>`);
+  $("#form-s").addEventListener("submit",async e=>{ e.preventDefault(); const f=e.target; const r={}; champs.forEach(c=>r[c.n]=f[c.n].value.trim()); await onOk(r); fermer(); toast("✅ Enregistré !"); });
+}
+
+/* ========== ACTIONS (clics) ========== */
+function trouver(s,id){return data[s].find(x=>x.id===id);}
+document.addEventListener("click",async e=>{
+  const el=e.target.closest("[data-act]"); if(!el) return;
+  const {act,s,id,t}=el.dataset;
+  switch(act){
+    case "fermer": fermer(); break;
+    case "filtre": filtres[s]=t; rendreSection(s); revelations(); break;
+    case "ajout": formItem(s); break;
+    case "edit": formItem(s,id); break;
+    case "sup": if(confirm("Supprimer définitivement cet élément ?")){ data[s]=data[s].filter(x=>x.id!==id); await sauver(); rendreSection(s); toast("🗑 Supprimé"); } break;
+    case "pdf": { const x=trouver(s,id); if(x?.pdf){ const u=dataUrlVersBlobUrl(x.pdf.data,"application/pdf"); window.open(u,"_blank"); } break; }
+    case "dl": { const x=trouver(s,id); if(x?.pdf){ const a=document.createElement("a"); a.href=dataUrlVersBlobUrl(x.pdf.data,"application/pdf"); a.download=x.pdf.nom||"document.pdf"; document.body.appendChild(a); a.click(); a.remove(); } break; }
+    case "zoom": { const x=trouver(s,id); ouvrir(`<div id="lightbox" style="max-width:96vw" data-act="fermer"><img src="${x.image}" alt="${esc(x.titre)}"></div>`); break; }
+    case "profil": formProfil(); break;
+    case "comp-ajout": formSimple("Ajouter une compétence",[{n:"icone",l:"Icône (un emoji)"},{n:"nom",l:"Nom *",req:1},{n:"desc",l:"Description",area:1}],{icone:"⭐",nom:"",desc:""},async r=>{data.competences.push({id:uid(),...r}); await sauver(); rendreCompetences(); revelations();}); break;
+    case "comp-edit": { const c=data.competences.find(x=>x.id===id); formSimple("Modifier la compétence",[{n:"icone",l:"Icône (un emoji)"},{n:"nom",l:"Nom *",req:1},{n:"desc",l:"Description",area:1}],c,async r=>{Object.assign(c,r); await sauver(); rendreCompetences(); revelations();}); break; }
+    case "comp-sup": if(confirm("Supprimer cette compétence ?")){ data.competences=data.competences.filter(x=>x.id!==id); await sauver(); rendreCompetences(); } break;
+    case "etape-ajout": formSimple("Ajouter une étape",[{n:"titre",l:"Titre *",req:1},{n:"detail",l:"Détail"}],{titre:"",detail:""},async r=>{data.parcours.push({id:uid(),...r}); await sauver(); rendreProfil();}); break;
+    case "etape-edit": { const p=data.parcours.find(x=>x.id===id); formSimple("Modifier l'étape",[{n:"titre",l:"Titre *",req:1},{n:"detail",l:"Détail"}],p,async r=>{Object.assign(p,r); await sauver(); rendreProfil();}); break; }
+    case "etape-sup": if(confirm("Supprimer cette étape ?")){ data.parcours=data.parcours.filter(x=>x.id!==id); await sauver(); rendreProfil(); } break;
+    case "exporter": exporter(); break;
+    case "importer": $("#in-import").click(); break;
+    case "quitter": basculerEdition(false); break;
+  }
+});
+
+/* ========== EXPORT / IMPORT ========== */
+function exporter(){
+  const blob=new Blob([JSON.stringify(data)],{type:"application/json"});
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download="contenu.json";
+  document.body.appendChild(a); a.click(); a.remove();
+  ouvrir(`<div class="boite"><h3>📤 Fichier prêt !</h3>
+    <p style="font-size:.93rem">Le fichier <b>contenu.json</b> vient d'être téléchargé. Il contient tout ton contenu (textes, images, PDF).</p>
+    <p style="font-size:.93rem;margin-top:10px">Pour que ton professeur le voie, envoie-le sur GitHub dans le même dossier que <b>index.html</b> (voir le guide), en remplaçant l'ancien s'il existe.</p>
+    <div class="rangee"><button class="btn btn-primaire btn-petit" data-act="fermer">J'ai compris</button></div></div>`);
+}
+$("#in-import").addEventListener("change",async e=>{
+  const f=e.target.files[0]; if(!f) return;
+  try{ const j=JSON.parse(await f.text()); if(!confirm("Remplacer le contenu actuel par ce fichier ?")) return; data=fusion(DEFAUT,j); await sauver(); tout(); toast("✅ Contenu restauré"); }
+  catch(err){ toast("⚠️ Fichier non valide."); }
+  e.target.value="";
+});
+
+/* ========== MODE ÉDITION ========== */
+function basculerEdition(on){ document.body.classList.toggle("edit",on); $("#btn-edit").textContent= on?"✎ Mode modification actif":"✎ Espace de modification"; if(on) toast("✎ Mode modification activé"); }
+$("#btn-edit").addEventListener("click",()=>basculerEdition(!document.body.classList.contains("edit")));
+
+/* ========== MENU + LIEN ACTIF ========== */
+$("#burger").addEventListener("click",()=>{ const o=$("#menu").classList.toggle("ouvert"); $("#burger").textContent=o?"✕":"☰"; });
+document.querySelectorAll("#menu a").forEach(a=>a.addEventListener("click",()=>{ $("#menu").classList.remove("ouvert"); $("#burger").textContent="☰"; }));
+const liens=[...document.querySelectorAll("#menu a")];
+const secs=liens.map(a=>$(a.getAttribute("href")));
+function surligner(){ const y=scrollY+120; let i=0; secs.forEach((s,k)=>{ if(s.offsetTop<=y) i=k; }); if(innerHeight+scrollY>=document.body.scrollHeight-4) i=secs.length-1; liens.forEach((a,k)=>a.classList.toggle("actif",k===i)); }
+addEventListener("scroll",surligner,{passive:true});
+
+/* ========== DÉMARRAGE ========== */
+(async function(){ $("#annee").textContent=new Date().getFullYear(); await charger(); tout(); surligner(); })();
+</script>
+</body>
+</html>
